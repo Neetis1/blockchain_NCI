@@ -12,7 +12,8 @@ contractAddress = process.env.CONTRACT_ADDRESS
 ownerAddress = process.env.OWNER_ADDRESS
 
 // set up a RPC (remote procedure call) to connect to an ethereum node
-const rpcURL = "https://ropsten.infura.io/v3/" + infuraToken;
+//const rpcURL = "https://ropsten.infura.io/v3/" + infuraToken;
+const rcpURL = "https://ropsten.infura.io/v3/b225cd556dc84e43aa01368015102ffb";
 
 // instantiate web3 with this URL
 const web3 = new Web3(rpcURL);
@@ -278,7 +279,7 @@ const abi = [
 
 // specify our contract address 
 //const address = contractAddress;
-const address = 0x5cc424796f45369fb3ed33efebbd6b5c3e93a4b2;
+const address = "0x5cc424796f45369fb3ed33efebbd6b5c3e93a4b2";
 
 // instantiate a contract object
 const contract = new web3.eth.Contract(abi, address);
@@ -288,7 +289,7 @@ console.log("connected to contract on ropsten");
 
 // specify our owner address
 //const owner = ownerAddress;
-const owner = 0xE8382E566739eE744a35734Fad0E966979139B23;
+const owner = "0xE8382E566739eE744a35734Fad0E966979139B23";
 
 // run some of the methods in our contract (using javascript)
 
