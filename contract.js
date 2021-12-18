@@ -13,7 +13,7 @@ ownerAddress = process.env.OWNER_ADDRESS
 
 // set up a RPC (remote procedure call) to connect to an ethereum node
 //const rpcURL = "https://ropsten.infura.io/v3/" + infuraToken;
-const rcpURL = "https://ropsten.infura.io/v3/b225cd556dc84e43aa01368015102ffb";
+const rpcURL = "https://ropsten.infura.io/v3/b225cd556dc84e43aa01368015102ffb";
 
 // instantiate web3 with this URL
 const web3 = new Web3(rpcURL);
