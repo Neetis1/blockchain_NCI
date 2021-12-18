@@ -277,7 +277,8 @@ const abi = [
 ]
 
 // specify our contract address 
-const address = contractAddress;
+//const address = contractAddress;
+const address = 0x5cc424796f45369fb3ed33efebbd6b5c3e93a4b2;
 
 // instantiate a contract object
 const contract = new web3.eth.Contract(abi, address);
@@ -286,7 +287,8 @@ console.log("connected to contract on ropsten");
 
 
 // specify our owner address
-const owner = ownerAddress;
+//const owner = ownerAddress;
+const owner = 0xE8382E566739eE744a35734Fad0E966979139B23;
 
 // run some of the methods in our contract (using javascript)
 
