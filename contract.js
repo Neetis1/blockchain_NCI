@@ -12,8 +12,8 @@ contractAddress = process.env.CONTRACT_ADDRESS
 ownerAddress = process.env.OWNER_ADDRESS
 
 // set up a RPC (remote procedure call) to connect to an ethereum node
-//const rpcURL = "https://ropsten.infura.io/v3/" + infuraToken;
-const rpcURL = "https://ropsten.infura.io/v3/b225cd556dc84e43aa01368015102ffb";
+const rpcURL = "https://ropsten.infura.io/v3/" + infuraToken;
+//const rpcURL = "https://ropsten.infura.io/v3/b225cd556dc84e43aa01368015102ffb";
 
 // instantiate web3 with this URL
 const web3 = new Web3(rpcURL);
@@ -23,7 +23,18 @@ console.log("connected to web3");
 // get the ABI (interface) for our contract
 const abi = [
 	{
-		"inputs": [],
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "name_",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "symbol_",
+				"type": "string"
+			}
+		],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
 	},
@@ -76,19 +87,6 @@ const abi = [
 		],
 		"name": "Transfer",
 		"type": "event"
-	},
-	{
-		"inputs": [],
-		"name": "_totalSupply",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
 	},
 	{
 		"inputs": [
@@ -171,6 +169,54 @@ const abi = [
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "subtractedValue",
+				"type": "uint256"
+			}
+		],
+		"name": "decreaseAllowance",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "addedValue",
+				"type": "uint256"
+			}
+		],
+		"name": "increaseAllowance",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "name",
 		"outputs": [
@@ -191,19 +237,6 @@ const abi = [
 				"internalType": "string",
 				"name": "",
 				"type": "string"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "tokenOwner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -278,8 +311,8 @@ const abi = [
 ]
 
 // specify our contract address 
-//const address = contractAddress;
-const address = "0x5cc424796f45369fb3ed33efebbd6b5c3e93a4b2";
+const address = contractAddress;
+//const address = "0xb321a16f2926fa4c39960014ae630c66e978e039";
 
 // instantiate a contract object
 const contract = new web3.eth.Contract(abi, address);
@@ -288,8 +321,8 @@ console.log("connected to contract on ropsten");
 
 
 // specify our owner address
-//const owner = ownerAddress;
-const owner = "0xE8382E566739eE744a35734Fad0E966979139B23";
+const owner = ownerAddress;
+//const owner = "0xE8382E566739eE744a35734Fad0E966979139B23";
 
 // run some of the methods in our contract (using javascript)
 
