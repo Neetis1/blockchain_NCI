@@ -4,10 +4,10 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN npm install 
+RUN npm install
 
-COPY . . 
+COPY . .
 
 EXPOSE 8080
 
-CMD ["node", "handler.js"]
+CMD ["node", "distribute.js"]
