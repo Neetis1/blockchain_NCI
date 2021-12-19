@@ -360,7 +360,7 @@ const returnAllValues = async() => {
     console.log(await getBalanceOfAccount(owner));
 }
 
-returnAllValues();
+//returnAllValues();
 
 
 module.exports = { getSymbol, getDecimals, getBalanceOfAccount, getName }
