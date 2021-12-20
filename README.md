@@ -48,7 +48,18 @@ SUPER_SECRET_PRIVATE_KEY - ( this is the secret key on the metamask account)
 once the environment variables are set the application can be run using the below command to distribute the tokens to accounts in the accounts.txt
 ```$node distribute.js```
 
-## Docker ##
+
+## Run using docker ##
+
+First pull the image from dockerhub 
+
+```docker pull neetisharma/blockchain_nci_neeti:blockchain_nci_2```
+
+Run the docker image 
+
+```docker run --name NAME_OF_THE_IMAGE -it neetisharma/blockchain_nci_neeti:blockchain_nci_2```
+
+## Docker useful commands ##
 ### View running docker containers ###
 
 ```docker ps```
