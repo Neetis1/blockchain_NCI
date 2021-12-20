@@ -34,16 +34,21 @@ From inside your folder, to create your own package.json:
 
 ```$npm init```
 
+## Run the project ##
 
-## CURL accessing of handlers"
+To run the project first install all the dependensies using 
+```$npm install```
 
-To POST to a route, execute the following CURL command:
+Add a .env file with details of 
+INFURA_TOKEN - ( infura account token that can fetched from infura.io)
+CONTRACT_ADDRESS - ( The address of the OpenZeplin account deployed the from remix)
+OWNER_ADDRESS - ( This is the address of the account creatd eon metamask)
+SUPER_SECRET_PRIVATE_KEY - ( this is the secret key on the metamask account)
 
-```curl -XPOST http://localhost:8080/transfer -H 'content-type: application/json' -d '{"account_to": "0x4d60E7f9d4901816981a0E4c6D95F394159C6371", "amount": "123000"}'```
-
+once the environment variables are set the application can be run using the below command to distribute the tokens to accounts in the accounts.txt
+```$node distribute.js```
 
 ## Docker ##
-
 ### View running docker containers ###
 
 ```docker ps```
@@ -80,20 +85,9 @@ To POST to a route, execute the following CURL command:
 ### run docker-compose ###
 ```docker-compose up```
 
-to run it in detached mode:
+### to run it in detached mode ###
 
 ```docker-compose up -d```
 
-
-## Requirements for Assignment ##
-
-### 1. create an ethereum account ###
-This is completed inside metamask (12 words, create an account, fund with Ropsten ether)
-
-### 2. Create an ERC20-compliant, fixed-supply token
-using open zeppelin contract, 
-
-### 3. Deply to Ropsten
-deploying using injected web3 and metamask
 
 
