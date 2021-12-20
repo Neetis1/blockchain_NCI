@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-// OpenZeppelin Contracts v4.3.2 (token/ERC20/ERC20.sol)
+// OpenZeppelin Contracts v4.4.1 (token/ERC20/ERC20.sol)
 
 pragma solidity ^0.8.0;
 
@@ -118,7 +118,6 @@ abstract contract Context {
         return msg.data;
     }
 }
-
 /**
  * @dev Implementation of the {IERC20} interface.
  *
@@ -166,8 +165,7 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
     constructor(string memory name_, string memory symbol_) {
         _name = name_;
         _symbol = symbol_;
-        
-        _mint(msg.sender, 1000000000000000000000000);
+        _mint(msg.sender,1000000000000000000);
     }
 
     /**
