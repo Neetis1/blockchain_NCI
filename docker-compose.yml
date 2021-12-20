@@ -2,7 +2,7 @@
 
 version: '3.7'
 services:
-  nci2021:
+  neeti_blk:
     build:
       context: .
       dockerfile: Dockerfile
